@@ -341,6 +341,7 @@ p {
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: var(--bg-light);
 }
 
 .unified-platform-section h2 {
@@ -362,6 +363,7 @@ p {
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: var(--bg-light);
 }
 .graphic-grid {
   display: grid;
@@ -460,7 +462,6 @@ p {
   justify-content: center;
   padding: calc(var(--spacing-xl) * 3) 0;
 }
-
 .why-swipe-section .card-container {
   display: flex;
   margin: var(--spacing-lg) 0;
@@ -479,13 +480,24 @@ p {
 
 /* GLOBAL SECTION */
 .global-section {
-  background-color: var(--primary-accent);
   width: 100%;
   display: flex;
   justify-content: center;
   color: var(--text-light);
   position: relative;
-  padding: calc(var(--spacing-xl) * 3) 0;
+  padding: calc(var(--spacing-xl) * 3) 0 0 0;
+}
+
+.global-section::before {
+  content: "";
+  width: 100%;
+  height: 1200px;
+  background-color: var(--primary-accent);
+  position: absolute;
+  top: -32px;
+  left: 0;
+  transform: skewY(-10deg);
+  z-index: -1;
 }
 
 .global-section a {
@@ -523,6 +535,16 @@ p {
   display: flex;
   justify-content: center;
   padding: calc(var(--spacing-xl) * 2) 0;
+  position: relative;
+}
+.virtual-events-section::before {
+  content: "";
+  background-color: var(--bg-white);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
 
 .virtual-events-section .primary-button {
@@ -606,12 +628,19 @@ p {
   width: 50%;
 }
 
-/* getting strted section */
-
+/* GETTING STARTED SECTION */
 .getting-started-section {
   display: flex;
   justify-content: center;
   padding: var(--spacing-xl) 0;
+}
+
+.getting-started-section .primary-button {
+  background-color: var(--purple-1);
+  margin: var(--spacing-md) 0;
+}
+.getting-started-section .primary-button:hover {
+  background-color: var(--primary-accent);
 }
 
 .getting-started-section .col-left {
@@ -629,21 +658,12 @@ p {
   margin: 0 var(--spacing-md) 0 0;
 }
 
-.getting-started-section .primary-button {
-  background-color: var(--purple-1);
-  margin: var(--spacing-md) 0;
-}
-
-.getting-started-section .primary-button:hover {
-  background-color: var(--primary-accent);
-}
-
 .getting-started-section .col-right .card .secondary-button {
   color: var(--purple-2);
-  padding: 0;
+  padding-left: 0;
 }
 
-/* Footer section */
+/* FOOTER STYLES */
 
 .footer {
   display: flex;
@@ -659,7 +679,6 @@ p {
 
 .footer .section-container {
   display: flex;
-  flex-direction: row;
 }
 
 .footer .col {
@@ -667,7 +686,7 @@ p {
 }
 
 .footer .col ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
